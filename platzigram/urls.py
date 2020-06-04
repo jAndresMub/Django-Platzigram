@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from . import views as local_views
+from posts import views as posts_views
 
 
 
 # Esta variable debe contener las url que estan dentro del proyecto
 
 urlpatterns = [
-   path('hello-word/', views.hello_word),
-   path('sorted/', views.sort_int),
-   path('Hi/<str:name>/<int:age>/', views.say_hi)
+   path('hello-word/', local_views.hello_word),
+   path('sorted/', local_views.sort_int),
+   path('Hi/<str:name>/<int:age>/', local_views.say_hi),
+
+   path('posts/', posts_views.list_post)
 ]
