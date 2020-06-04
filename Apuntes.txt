@@ -85,6 +85,26 @@ INSTALLED_APPS = [
     'posts',
 
 
+-------SISTEMA DE VISTAS--------
+
+Dentro de la aplicacion en este caso posts se crea un archivo que se llama views.py, en este se crea las funciones en python que van a llevar al html.
+Estas funciones que se crearon tambien deben estar listadas en el archivo principal de urls del proyecto, se importa en este caso "from posts import views as posts_views"
+con esta importacion ya se tiene acceso a las funciones de la aplicacion posts. Esta sera la parte logica.
+
+Para la parte estetica se creó el archivo feed.html, este se llama desde la funcion:
+
+def list_post(request):
+    content = []
+    return render(request, 'feed.html', {'posts': posts})
+
+
+
+
+
+-------TEMPLATES DJANGO --------
+
+https://docs.djangoproject.com/en/3.0/ref/templates/builtins/
+
 
 
 
