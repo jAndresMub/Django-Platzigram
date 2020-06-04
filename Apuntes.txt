@@ -60,7 +60,29 @@ Documentacion Request objects
 https://docs.djangoproject.com/en/3.0/ref/request-response/
 
 
+-------APLICACION DE DJANGO---------
+
+Para iniciar un aplicacion de django se debe usar:
+
+python3 manage.py startapp [nombre de la aplicacion]
+
+
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
