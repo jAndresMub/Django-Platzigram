@@ -1,0 +1,66 @@
+Entorno de desarrollo:
+
+- Descarga e instala python3 (sudo apt install python3)
+- Descarga en instala pip (sudo apt install pip3)
+- Descarga el entorno virtual (pip install virtualenv o python3 -m venv venv (esto se hace en la carpeta donde se quiere crear el entorno virtual))
+    
+    * source venv/bin/activate: esto activa el entorno virtual
+    * deactivate: desactiva el entorno virtual
+-  Instalar  Django (pip install django -U)
+-  Valida las librerias que estan activas en el entorno virtual(pip freeze)
+
+Django:
+
+- Para iniciar un proyecto, con el venv activo se debe ejecutar el siguiente comando
+    
+    * django-admin startproject pltzigram . (el punto es para crear el proyecto en la misma ruta)
+
+    Esto crea 4 archivos dentro de la carpeta del proyecto y uno a la misma altura
+
+    __init__.py: sirve para declarar el proyecto como un modulo de python
+    settings.py: es el mas importante de django define todas las configuraciones del proyecto
+    urls.py: es el punto de entrada para todas las peticiones que entren al proyecto
+    wsgi.py: es el archivo para el deploy
+    manage.py: nunca se toca, es una interfaz sobre django admin
+
+- Ejecutando python3 manage.py se muestran todos los subcomandos a los que se tiene acceso
+
+    * Para iniciar el servidor: python3 manage.py runserver
+
+Documentacion URL:
+https://docs.djangoproject.com/en/3.0/topics/http/urls/
+
+Cosas que suceden cuando se hace un request de http:
+
+1) django abre settings, busca la constante ROOT_URLCONF, su valor generalmente es [nombre del proyecto].urls que es el archivo de urls que se crea automaticamente cuando se crea el proyecto
+2) Ya en el archivo de urls va a la variable urlpatterns, esta contiene el path (por ejemplo "path('hello-word/', hello_word)") dentro de esta esta la url la funcion que ejecuta
+    *hello-word/ es la url es lo que se pone en el navegador
+    *hello_word es la funcion que se esta llamanado para que se ejecute cuando se solicita esa url
+    -IMPORTANTE: django evalua la variable urlpatterns en orden, del primer path al ultimo buscando el match, eso quiere decir que si se tienen casos especiales que tienen que ser evaluados antes
+    para evitar que entre de pronto en una url equivocada, estos se deben poner primero
+
+    por ejemplo:
+    
+    urlpatterns = [
+        path('articles/2003/', views.special_case_2003),
+        path('articles/<int:year>/', views.year_archive),
+        path('articles/<int:year>/<int:month>/', views.month_archive),
+        path('articles/<int:year>/<int:month>/<slug:slug>/', views.article_detail),
+    ]
+
+    si se pide en la url articles/2003 django hace primero match con la funcion views.special_case_2003 si, el path correspondiente a este caso especial se pone despues django invocara la 
+    funcion views.year_archive obteniendo un comportamiento no deseado.
+
+PARA MAS INFORMACION DE URL VER LA DOCUMENTACION
+
+Documentacion datetime 
+https://docs.python.org/3/library/datetime.html
+
+Documentacion Request objects
+https://docs.djangoproject.com/en/3.0/ref/request-response/
+
+
+
+
+    
+
