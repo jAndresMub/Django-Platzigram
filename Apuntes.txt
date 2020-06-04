@@ -64,7 +64,27 @@ https://docs.djangoproject.com/en/3.0/ref/request-response/
 
 Para iniciar un aplicacion de django se debe usar:
 
-python3 manage.py startapp [nombre de la aplicacion]
+python3 manage.py startapp [nombre de la aplicacion] Esto se debe hacer dentro de la carpeta del proyecto
+
+Una aplicacion en el ambito de django es (https://docs.djangoproject.com/en/3.0/ref/applications/) paquete de python que entrega al proyecto prestaciones que pueden ser reutilizables en varias
+partes del proyecto o en varios proyectos
+
+Para instalar la aplicacion en nuestro proyecto se debe ir a settings (del proyecto) y en la variable INSTALLED_APPS incluir la aplicacion 
+
+INSTALLED_APPS = [
+    # Django Apps, estas son las que trae por defecto
+
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    #Local Apps simplemente se pone el nombre de la aplicacion sin mas
+    'posts',
+
+
 
 
 
