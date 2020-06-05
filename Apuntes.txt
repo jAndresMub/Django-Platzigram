@@ -87,7 +87,7 @@ INSTALLED_APPS = [
 
 -------SISTEMA DE VISTAS--------
 
-Dentro de la aplicacion en este caso posts se crea un archivo que se llama views.py, en este se crea las funciones en python que van a llevar al html.
+Dentro de la aplicacion en este caso posts se crea un archivo que se llama views.py (diferente al del proyecto), en este se crea las funciones en python que van a llevar al html.
 Estas funciones que se crearon tambien deben estar listadas en el archivo principal de urls del proyecto, se importa en este caso "from posts import views as posts_views"
 con esta importacion ya se tiene acceso a las funciones de la aplicacion posts. Esta sera la parte logica.
 
@@ -98,12 +98,19 @@ def list_post(request):
     return render(request, 'feed.html', {'posts': posts})
 
 
-
+En el archivo feed.html esta la primera vista de "fotos" del proyecto... investigar bootstrap
 
 
 -------TEMPLATES DJANGO --------
 
 https://docs.djangoproject.com/en/3.0/ref/templates/builtins/
+
+
+-------BDD-----------------
+
+Por defecto viene con sqllite3 esta se puede cambiar en el archivo de settings https://docs.djangoproject.com/es/3.0/faq/models/
+En el archivo models se crea el modelo de la tabla que se quiere realizar
+para que estos cambios se vean realizados se debe por fuera del servidor en la consola ejecutar el comando: python3 manage.py makemigrations
 
 
 
