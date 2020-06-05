@@ -110,7 +110,13 @@ https://docs.djangoproject.com/en/3.0/ref/templates/builtins/
 
 Por defecto viene con sqllite3 esta se puede cambiar en el archivo de settings https://docs.djangoproject.com/es/3.0/faq/models/
 En el archivo models se crea el modelo de la tabla que se quiere realizar
-para que estos cambios se vean realizados se debe por fuera del servidor en la consola ejecutar el comando: python3 manage.py makemigrations
+para que estos cambios se vean realizados se debe por fuera del servidor en la consola ejecutar el comando: python3 manage.py makemigrations, 
+esto se debe realizar cada vez que se realice un cambio en los modelos, posterior a eso se debe ejecutar python3 manage.py migrate...
+
+-- Se puede ingresar a una consola de django con el comando python3 manage.py shell 
+
+DOCUMENTACION QURIES https://docs.djangoproject.com/en/3.0/topics/db/queries/
+
 
 
 
