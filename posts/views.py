@@ -54,4 +54,6 @@ def ing_post(request,email,passwoed,first_name,last_name):
     return HttpResponse(usuer)
 
     
-    
+def queryuno(request, mailusuario):
+    mailusuario = User.objects.filter(email__endswith=mailusuario)
+    return HttpResponse(mailusuario)

@@ -115,7 +115,9 @@ esto se debe realizar cada vez que se realice un cambio en los modelos, posterio
 
 -- Se puede ingresar a una consola de django con el comando python3 manage.py shell 
 
-DOCUMENTACION QURIES https://docs.djangoproject.com/en/3.0/topics/db/queries/
+DOCUMENTACION QURIES https://docs.djangoproject.com/en/3.0/topics/db/queries/ ver queryuno en los views de posts
+
+el atributo get esta diseñado para traer solo un objeto
 
 
 
